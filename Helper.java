@@ -12,7 +12,13 @@ public class Helper
      */
     public static double Converter(double value, int mode)
     {
-        return 0;
+        if(mode==1){
+        	return value * .621;  
+        }
+        if(mode==2){
+        	return value * 1.61;
+        }
+        return value;
     }
     
     /*
@@ -22,7 +28,12 @@ public class Helper
      */
     public static int[] generateRandom(int count, int min, int max)
     {
-    	return null;
+    	int array[] = new int[count];
+    	//int range = rand.nextInt(max + 1 -min)+ min;
+    	for(int i= 0; i<array.length; i ++){
+    		array[i] = (int)(Math.random() * count);
+    	}
+    	return array;
     }
     
     /*
@@ -30,7 +41,13 @@ public class Helper
      */
     public static int findSmallestNumberThatDivides (int n1, int n2)
     {
-    	return 0;
+	int i = 2;
+    	while (true)
+    	{
+    		if ((n1 % i == 0) && (n2 % i == 0))
+    			return i;
+    		i++;
+    	}
     }
     
     /*
@@ -38,7 +55,11 @@ public class Helper
      */
     public static double findMean(double[] values)
     {
-    	return 0;
+    	double sum =0;
+    	for(int i =0; i< values.length; i++){
+    		sum += values[i];
+    	}
+    	return sum/values.length;
     }
     
     /*
@@ -48,6 +69,10 @@ public class Helper
      */
     public static boolean isMichiganSSN(long ssn)
     {
+    	int FirstThree = (int) ssn/1000000;
+    	if(FirstThree > 362 && FirstThree < 386){
+    		return true;
+    	}
     	return false;
     }
     
@@ -70,6 +95,14 @@ public class Helper
      */
     public static Product makeProduct(int offset, int colorCode, int revision)
     {
+    	char code ='A';
+    	int TrueOffset = offset + 222000;
+    	if(colorCode==1){
+    		 code = 'R';
+    	}
+    	if(colorCode==2){
+    		 code = 'B';
+    	}
     	return null;
     }
     
